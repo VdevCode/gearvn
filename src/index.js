@@ -4,9 +4,9 @@ const showGridMenu = document.querySelector('.menu__header')
 buttonGrid.addEventListener('click', function () {
 
     buttonGrid.classList.toggle('bxs-message-alt-x')
-    if(buttonGrid.classList.contains('bxs-message-alt-x')){
+    if (buttonGrid.classList.contains('bxs-message-alt-x')) {
         showGridMenu.classList.toggle('active')
-    }else{
+    } else {
         showGridMenu.classList.remove('active')
     }
 })
@@ -210,7 +210,7 @@ var arrayProductImageTv = [
         TiviimageProduct: 'https://product.hstatic.net/1000026716/product/gigabyte_g24f_gearvn_32c459bb9b7_6e61bb5ce2754618bc3a20992d463f91_2ff413a7c7474d4996d7701e92362fc5_large.jpg',
         TivisalesProduct: '-20%',
     },
-     {
+    {
         TiviName: 'Màn hình ViewSonic VA2432-H 24" IPS 75Hz viền mỏng',
         TivipriceBf: 4 + '.' + 990 + '.' + 990,
         Tiviprice: 2 + '.' + 990 + '.' + 990,
@@ -238,14 +238,14 @@ var arrayProductImageTv = [
         TiviimageProduct: 'https://product.hstatic.net/1000026716/product/aoc_24g2e_-_gearvn_a1cd043e4c4e46ecb751fa1467538b55_large.jpg',
         TivisalesProduct: '-20%',
     },
-     {
+    {
         TiviName: 'Màn hình HKC MB27V9 27" IPS 75Hz',
         TivipriceBf: 4 + '.' + 990 + '.' + 990,
         Tiviprice: 2 + '.' + 990 + '.' + 990,
         TiviimageProduct: 'https://product.hstatic.net/1000026716/product/hkc_mb27v9_gearvn_b328a31f3c0d41b38f8955656637b86c_large.jpg',
         TivisalesProduct: '-38%',
     },
-     {
+    {
         TiviName: 'Màn hình ViewSonic VX2776-SMHD 27" IPS 75Hz loa kép 3W',
         TivipriceBf: 6 + '.' + 990 + '.' + 990,
         Tiviprice: 4 + '.' + 990 + '.' + 990,
@@ -357,12 +357,12 @@ var arrayProductImageKeyBoard = [
     },
     {
         KeyBoardName: 'Bàn phím Rapoo V50S RGB',
-        KeyBoardpriceBf:  990 + '.' + 990,
-        KeyBoardprice:   390 + '.' + 990,
+        KeyBoardpriceBf: 990 + '.' + 990,
+        KeyBoardprice: 390 + '.' + 990,
         KeyBoardimageProduct: 'https://product.hstatic.net/1000026716/product/ban-phim-choi-game-rapoo-v50s_7dd31f31495a4d12af6b0ce5aeb50e2b_large.png',
         KeyBoardsalesProduct: '-50%',
     },
-     {
+    {
         KeyBoardName: 'Bàn phím Leopold FC900R Bluetooth White Blue Star',
         KeyBoardpriceBf: 2 + '.' + 990 + '.' + 990,
         KeyBoardprice: 1 + '.' + 990 + '.' + 990,
@@ -440,14 +440,14 @@ BtnProductListKeyBoard.addEventListener('click', () => {
 var arrayProductImageKeyBoarMouse = [
     {
         MouseName: 'Chuột Logitech G102 Lightsync RGB Black',
-        MousepriceBf:590 + '.' + 990,
+        MousepriceBf: 590 + '.' + 990,
         Mouseprice: 400 + '.' + 990,
         MouseimageProduct: 'https://product.hstatic.net/1000026716/product/artboard_1_2ff4ba55c7be43a89f8ea1b2c2e577d6_large.png',
         MousesalesProduct: '-20%',
     },
     {
         MouseName: 'Chuột Logitech G102 Lightsync RGB White',
-        MousepriceBf:590 + '.' + 990,
+        MousepriceBf: 590 + '.' + 990,
         Mouseprice: 400 + '.' + 990,
         MouseimageProduct: 'https://product.hstatic.net/1000026716/product/artboard_1_45df773394834f7ab2b99f10dbded46c_large.png',
         MousesalesProduct: '-33%',
@@ -606,7 +606,7 @@ function showProductImageLaptopOffice() {
             <div class="product__detals-hot">
             <img class="product__detals-img" src="${OfficelaptopimageProductShow}" alt="">
             <div class="product__title">
-                <h1>${ OfficelaptopNameProduct}</h1>
+                <h1>${OfficelaptopNameProduct}</h1>
                 <h2>${OfficelaptoppriceBfBefore}</h2>
                 <h3>${OfficelaptoppriceProductAfter}</h3>
                 <div class="product__image-hot">
@@ -639,12 +639,70 @@ setInterval(function () {
 
 //darkmode
 const openDarkmode = document.querySelector('#darkmode')
-openDarkmode.addEventListener('click',function(){
+openDarkmode.addEventListener('click', function () {
     openDarkmode.classList.toggle('bxs-moon')
-    if(openDarkmode.classList.contains('bxs-moon')){
+    if (openDarkmode.classList.contains('bxs-moon')) {
         document.body.classList.toggle('active')
     }
-    else{
+    else {
         document.body.classList.remove('active')
     }
 })
+
+
+//scroll top
+const scrollBtn = document.querySelector(".btn");
+
+const btnVisibility = () => {
+    if (window.scrollY > 400) {
+        scrollBtn.style.visibility = "visible";
+    } else {
+        scrollBtn.style.visibility = "hidden";
+    }
+};
+
+document.addEventListener("scroll", () => {
+    btnVisibility();
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+const slideHeaderMenu = document.querySelector(".header");
+
+const slideHeaderVisibility = () => {
+    if (window.scrollY > 800) {
+        slideHeaderMenu.style.visibility = "hidden";
+    } 
+    else{
+        slideHeaderMenu.style.visibility = "visible";
+    }
+};
+
+document.addEventListener("scroll", () => {
+    slideHeaderVisibility();
+});
+
+
+//open category list
+const BtnCategoryList = document.querySelector('.category-list')
+const showCategoryList = document.querySelector('.category__list-menu-section')
+const hideCategoryList = document.querySelector('.category__list--menu-item')
+
+
+BtnCategoryList.addEventListener('click',()=>{
+   
+        showCategoryList.classList.toggle('active1')
+})
+
+hideCategoryList.addEventListener('click',()=>{
+    showCategoryList.classList.remove('active1')
+})
+
+// showCategoryList.addEventListener('click',()=>{
+//     showCategoryList.classList.add('active1')
+// })
