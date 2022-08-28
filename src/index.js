@@ -157,8 +157,9 @@ function showLaptopProduct() {
 
 
 //open Show laptop product
-const BtnLaptopProduct = document.querySelector('.openShowProduct')
+let BtnLaptopProduct = document.querySelector('.openShowProduct')
 BtnLaptopProduct.addEventListener('click', () => {
+    BtnLaptopProduct.innerHTML = 'Đã Load'
     showLaptopProduct()
     if (showLaptopProduct()) {
         BtnLaptopProduct.style.display = 'none'
@@ -313,6 +314,7 @@ function showProductImageTivi() {
 
 const BtnProductListTv = document.querySelector('.showProductListTivi')
 BtnProductListTv.addEventListener('click', () => {
+    BtnProductListTv.innerHTML = 'Đã Load'
     showProductImageTivi()
 })
 
@@ -429,6 +431,7 @@ function showProductImageKeyBoard() {
 
 const BtnProductListKeyBoard = document.querySelector('.showProductListKeyBoard')
 BtnProductListKeyBoard.addEventListener('click', () => {
+    BtnProductListKeyBoard.innerHTML = "Đã Load"
     showProductImageKeyBoard()
 })
 
@@ -513,6 +516,7 @@ function showProductImageMouse() {
 
 const BtnProductListMouse = document.querySelector('.showProductListMouse')
 BtnProductListMouse.addEventListener('click', () => {
+    BtnProductListMouse.innerHTML = "Đã Load"
     showProductImageMouse()
 })
 
@@ -623,6 +627,7 @@ function showProductImageLaptopOffice() {
 
 const BtnProductListLaptopOffice = document.querySelector('.openShowProductLaptopOffice')
 BtnProductListLaptopOffice.addEventListener('click', () => {
+    BtnProductListLaptopOffice.innerHTML ="Đã Load"
     showProductImageLaptopOffice()
 })
 
@@ -706,3 +711,17 @@ hideCategoryList.addEventListener('click',()=>{
 // showCategoryList.addEventListener('click',()=>{
 //     showCategoryList.classList.add('active1')
 // })
+
+
+const closePages = document.querySelector('#closePages')
+const openPagesGearvn = document.querySelector('.caseGearvn')
+const showPagesGearvn = document.querySelector('.category__pages-content')
+
+openPagesGearvn.addEventListener('click',()=>{  
+    showPagesGearvn.classList.add('active')
+
+})
+
+closePages.addEventListener('click',()=>{
+    showPagesGearvn.classList.remove('active')
+})
