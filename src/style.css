@@ -157,7 +157,6 @@ section {
     align-items: center;
     background: var(--color-light-main);
     text-transform: capitalize;
-    cursor: pointer;
     text-align: center;
     margin-top: 10rem;
     color: var(--color-black);
@@ -168,8 +167,9 @@ section {
     font-size: 1.7rem;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-right: 1px solid rgb(219, 216, 216);
+    /* cursor: pointer; */
 }
 
 .category-list li {
@@ -562,6 +562,194 @@ section {
 .category__list-menu{
     display: none;
 }
+.about__image{
+    margin-top: 8rem;
+    width: 100%;
+    height: 100%;
+    background: rgb(245, 209, 9);
+    position: relative;
+    clip-path: circle(68.2% at 50% 46%);
+}
+.about__image img:nth-child(1){
+    width: 100%;
+    height: 100%;
+}
+.about__image img:nth-child(2){
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about__image img:nth-child(3){
+    width: 100%;
+}
+.about__image img:nth-child(4){
+    width: 50%;
+    left: 50%;
+    transform: translateX(50%);
+}
+.about__image img:nth-child(5){
+    width: 100%;
+    
+}
+.about__gif{
+    position: relative;
+    width: 100%;
+    background: #36e2ec;
+}
+.about__gif img:nth-child(1){
+    width: 100%;
+}
+.about__gif img:nth-child(2){
+    width: 100%;
+    /* left: 50%;
+    transform: translateX(50%); */
+}
+.about__gif--menu{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(15%);
+}
+.btn__load{
+    padding:1rem 2rem;
+    margin-top:2rem;
+    background:rgb(14, 247, 119);
+    color: red;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(50%);
+    left: 50%;
+    filter: drop-shadow(rgba(1, 1, 1, 0.3) 0px 0px 5px);
+    margin-bottom: 2rem;
+}
+
+.btn__load a{
+    color: rgb(5, 4, 4);
+    font-weight: 800;
+    
+}
+
+.blog__container {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 8rem;
+}
+
+.blog__post {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    /* padding: 1.4rem;
+    border-radius: 6px;
+    background: var(--light-white-color); */
+
+}
+
+.blog__img {
+    border-radius: 4px;
+    width: 100%;
+    margin: 0 auto;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.author__blog-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.author__blog-name img {
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    margin-right: 1rem;
+}
+
+.blog__details {
+    font-size: 1.8rem;
+    color: var(--black-color);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.blog__title{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--color-black) !important;
+}
+.like__more-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.like__more-btn--content{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+.like__more-btn--content a{
+    margin-right: 1rem;
+    color: var(--color-white);
+}
+.like__more-btn--content i{
+    font-size: 2rem;
+}
+.like__more-view{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--color-black);
+}
+
+.like__more-view i{
+    margin-right: 1rem;
+    color: var(--color-black);
+}
+
+.blog__date{
+    font-size: 1.7rem;
+    color: var(--color-black);
+}
+.blog__date span:nth-child(1){
+    color: red;
+    font-weight: 800;
+}
+.blog__container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+}
+.blog__details{
+    color: var(--color-black);
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -579,6 +767,11 @@ responsive */
     .product__hot-sales {
         grid-template-columns: repeat(4, 1fr);
     }
+    .blog__container {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
 }
 
 
@@ -827,11 +1020,14 @@ responsive */
         text-transform: capitalize;
         font-size: 1.7rem;
     }
+    .about__gif--menu{
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);
+        display: grid;
+        transform: translateX(0);
+    }
 
 }
-
-
-
 
 
 
@@ -960,6 +1156,12 @@ responsive */
 
     .category-menu {
         margin-top: 7rem;
+    }
+    .about__image{
+        margin-top: 5rem;
+    }
+      .blog__container {
+        grid-template-columns: repeat(1, 1fr);
     }
 
 }
