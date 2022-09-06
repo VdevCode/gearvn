@@ -28,7 +28,7 @@ var arrayImageProduct = [
     {
         laptopName: 'Laptop gaming Acer Aspire 7 A715 43G R8GA',
         priceBf: 23 + '.' + 990 + '.' + 990,
-        price: 17 + '.' + 990 + '.' + 990,
+        price: 1 + '.' + 990 + '.' + 990,
         imageProduct: 'https://product.hstatic.net/1000026716/product/r8ga_15109189103c4dd7b706dfd168dbed04_large.png',
         salesProduct: '-25%',
     },
@@ -126,7 +126,7 @@ var arrayImageProduct = [
 
 ]
 
-function showLaptopProduct() {
+function showLaptopProduct(){ 
     var productHot = document.getElementById('productHot')
     productHot.innerHTML = ''
     for (var i = 0; i < arrayImageProduct.length; i++) {
@@ -136,7 +136,7 @@ function showLaptopProduct() {
         imageProductShow = arrayImageProduct[i].imageProduct
         saleProduct = arrayImageProduct[i].salesProduct
         productHot.innerHTML += `
-            <div class="product__detals-hot">
+            <div class="product__detals-hot product__detals-hot-1">
             <img class="product__detals-img" src="${imageProductShow}" alt="">
             <div class="product__title">
                 <h1>${laptopNameProduct}</h1>
@@ -153,6 +153,8 @@ function showLaptopProduct() {
     }
 }
 
+
+
 // showLaptopProduct()
 
 
@@ -165,6 +167,25 @@ BtnLaptopProduct.addEventListener('click', () => {
         BtnLaptopProduct.style.display = 'none'
     }
 })
+
+let showPopupProductItem = document.querySelector('.show__product--item')
+
+let closePopupItem = document.querySelector('.show__product--close--btn')
+
+let showProductHotPopUp = document.getElementsByClassName('product__detals-hot')
+for (let i = 0; i < arrayImageProduct.length; i++) {
+    showProductHotPopUp[i].addEventListener('click', () => {
+        showPopupProductItem.classList.add('active')
+      
+    })
+}        
+
+
+closePopupItem.addEventListener('click',()=>{
+    showPopupProductItem.classList.remove('active')
+    console.log('he');
+})
+
 
 
 //show product list tivi
@@ -574,10 +595,10 @@ var arrayImageProductLaptopOffice = [
         OfficesalesProduct: '-22%',
     },
     {
-        OfficelaptopName: 'Laptop Gaming Acer Nitro 5 Eagle AN515 57 720A',
+        OfficelaptopName: 'Laptop HP Envy 13 BA1536TU 4U6M5PA',
         OfficepriceBf: 30 + '.' + 990 + '.' + 990,
         Officeprice: 24 + '.' + 990 + '.' + 990,
-        OfficeimageProduct: '/images/Laptop/Ltop19.PNG',
+        OfficeimageProduct: 'https://product.hstatic.net/1000026716/product/1_4c2ca2050f97432189378115d0fa1f0d_large.png',
         OfficesalesProduct: '-30%',
     },
     {
@@ -627,7 +648,7 @@ function showProductImageLaptopOffice() {
 
 const BtnProductListLaptopOffice = document.querySelector('.openShowProductLaptopOffice')
 BtnProductListLaptopOffice.addEventListener('click', () => {
-    BtnProductListLaptopOffice.innerHTML ="Đã Load"
+    BtnProductListLaptopOffice.innerHTML = "Đã Load"
     showProductImageLaptopOffice()
 })
 
@@ -682,8 +703,8 @@ const slideHeaderMenu = document.querySelector(".header");
 const slideHeaderVisibility = () => {
     if (window.scrollY > 800) {
         slideHeaderMenu.style.visibility = "hidden";
-    } 
-    else{
+    }
+    else {
         slideHeaderMenu.style.visibility = "visible";
     }
 };
@@ -699,12 +720,12 @@ const showCategoryList = document.querySelector('.category__list-menu-section')
 const hideCategoryList = document.querySelector('.category__list--menu-item')
 
 
-BtnCategoryList.addEventListener('click',()=>{
-   
-        showCategoryList.classList.toggle('active1')
+BtnCategoryList.addEventListener('click', () => {
+
+    showCategoryList.classList.toggle('active1')
 })
 
-hideCategoryList.addEventListener('click',()=>{
+hideCategoryList.addEventListener('click', () => {
     showCategoryList.classList.remove('active1')
 })
 
@@ -717,11 +738,239 @@ const closePages = document.querySelector('#closePages')
 const openPagesGearvn = document.querySelector('.caseGearvn')
 const showPagesGearvn = document.querySelector('.category__pages-content')
 
-openPagesGearvn.addEventListener('click',()=>{  
+openPagesGearvn.addEventListener('click', () => {
     showPagesGearvn.classList.add('active')
 
 })
 
-closePages.addEventListener('click',()=>{
+closePages.addEventListener('click', () => {
     showPagesGearvn.classList.remove('active')
 })
+
+
+var arrayImageProductLaptopPc = [
+    {
+
+        PclaptopName: 'GVN VIPER Plus i3060',
+        PcpriceBf: 28 + '.' + 990 + '.' + 990,
+        Pcprice: 27 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/2_3671556ea6394514a50c06138e875901_large.jpg',
+        PcsalesProduct: '-7%',
+    },
+    {
+
+        PclaptopName: 'GVN PHANTOM i3070',
+        PcpriceBf: 40 + '.' + 990 + '.' + 990,
+        Pcprice: 39 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_3d8bc477e4f84fd5a8c2a7771cc0041b_large.jpg',
+        PcsalesProduct: '-2%',
+    },
+    {
+
+        PclaptopName: 'GVN PHANTOM i3070',
+        PcpriceBf: 13 + '.' + 990 + '.' + 990,
+        Pcprice: 12 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/minion_i1660s_20554623778e42b18d79afffe0e18f8a_large.jpg',
+        PcsalesProduct: '-6%',
+    },
+    {
+
+        PclaptopName: 'GVN PHANTOM i3060',
+        PcpriceBf: 34 + '.' + 990 + '.' + 990,
+        Pcprice: 32 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_59b0109a9a474d1ea14c2895bcd4f39a_large.jpg"',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'G-Studio X',
+        PcpriceBf: 87 + '.' + 990 + '.' + 990,
+        Pcprice: 86 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gstudiox_87ea0c1c7f264a0aa53fdc268977336e_large.jpg"',
+        PcsalesProduct: '-1%',
+    },
+    {
+
+        PclaptopName: 'Case Cooler Master Cosmos C700M - 30th Anniversary Limited Edition',
+        PcpriceBf: 26 + '.' + 990 + '.' + 990,
+        Pcprice: 25 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/case_cooler_f464313e62f349b689a1e813acb381ff_large.jpg',
+        PcsalesProduct: '-4%',
+    },
+    {
+
+        PclaptopName: 'Case Jetek Squid X3 Black (3 Fan RGB)',
+        PcpriceBf: 890 + '.' + 990,
+        Pcprice: 790 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/x3_cb397106104f4cc1b76804fd3b5936a3_large.png',
+        PcsalesProduct: '-11%',
+    },
+    {
+
+        PclaptopName: 'Case Asus TUF Gaming GT501VC',
+        PcpriceBf: 3 + '.' + 990 + '.' + 990,
+        Pcprice: 2 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/tuf-gaming-gt501-3d-1_289a072d90334f59bacbee04bf966fac_large.png',
+        PcsalesProduct: '-14%',
+    },
+    {
+
+        PclaptopName: 'Case LIAN LI PC - O11 Dynamic XL ROG Certify White',
+        PcpriceBf: 6 + '.' + 990 + '.' + 990,
+        Pcprice: 6 + '.' + 490 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/white_33e2e18f489b4fb19177d97b1d448a6f_large.jpg',
+        PcsalesProduct: '-2%',
+    },
+    {
+
+        PclaptopName: 'Case Corsair 220T White RGB Airflow Tempered Glass ( Mid-Tower )',
+        PcpriceBf: 2 + '.' + 590 + '.' + 990,
+        Pcprice: 2 + '.' + 490 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gvn_220t_rgb_airflow_tempered_glass_mid-tower_smart_case___white_c69baa03e1c946c7bb81e9d43f24a8cd_large.jpg"',
+        PcsalesProduct: '-2%',
+    },
+    {
+
+        PclaptopName: 'Case Asus TUF Gaming GT501 White Edition (3 fan RGB)',
+        PcpriceBf: 3 + '.' + 990 + '.' + 990,
+        Pcprice: 2 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/tuf-gaming-gt501-white-edition-01_145867baebc74aca98593c02c99d844c_large.jpg',
+        PcsalesProduct: '-23%',
+    },
+    {
+
+        PclaptopName: 'Case MIK TN10 (3 FAN GALAXY RGB)',
+        PcpriceBf: 1 + '.' + 290 + '.' + 990,
+        Pcprice: 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gemini_56113ebc3f0d4c68bf59d11159b029a2_large.png',
+        PcsalesProduct: '-11%',
+    },
+    {
+
+        PclaptopName: 'Case NZXT H710i CRFT Cyberpunk Limited Edition',
+        PcpriceBf: 9 + '.' + 990 + '.' + 990,
+        Pcprice: 9 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1638828597-crfth710i-cyberpunkmain3systempng-clear-background_c86029f4352a4901a2435a13121da05b_large.png',
+        PcsalesProduct: '-0%',
+    },
+    {
+
+        PclaptopName: 'GVN PHANTOM i3060GVN TITAN Plus i3090Ti',
+        PcpriceBf: 92 + '.' + 990 + '.' + 990,
+        Pcprice: 90 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_599f5f07a504443c9ca2b05318e1d8a4_large.jpg',
+        PcsalesProduct: '-3%',
+    },
+    {
+
+        PclaptopName: 'GVN VIPER i2060',
+        PcpriceBf: 20 + '.' + 990 + '.' + 990,
+        Pcprice: 10 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_e5c97edf405046eb96fc7896e3c56087_large.jpg',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'GVN VIPER Plus i3070',
+        PcpriceBf: 34 + '.' + 990 + '.' + 990,
+        Pcprice: 32 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_de3a14a8969c433fbe31ed9ddee5997f_large.jpg',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'GVN VIPER i3050',
+        PcpriceBf: 22 + '.' + 990 + '.' + 990,
+        Pcprice: 21 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/2_1649a388894f4ddabf6880f6a73c710f_large.jpg',
+        PcsalesProduct: '-6%',
+    },
+    {
+
+        PclaptopName: 'GVN PHANTOM i3060',
+        PcpriceBf: 34 + '.' + 990 + '.' + 990,
+        Pcprice: 32 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/1_59b0109a9a474d1ea14c2895bcd4f39a_large.jpg"',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'GVN MINION i1660S',
+        PcpriceBf: 13 + '.' + 990 + '.' + 990,
+        Pcprice: 12 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/minion_i1660s_20554623778e42b18d79afffe0e18f8a_large.jpg',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'Case Thermaltake AH T600 TG Snow',
+        PcpriceBf: 6 + '.' + 190 + '.' + 990,
+        Pcprice: 5 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/case-thermaltake-ah-t600-tg-snow_6fe69a3014ed48279a4d14a5c50d7eb0_large.jpg',
+        PcsalesProduct: '-3%',
+    },
+    {
+
+        PclaptopName: 'Case Thermaltake AH T200 TG Snow',
+        PcpriceBf: 3 + '.' + 890 + '.' + 990,
+        Pcprice: 3 + '.' + 690 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gearvn-case-thermaltake-ah-t200-tg-white-1_0d58015ad4ad4d4ba325c08b22ca2aad_large.png',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'Case Thermaltake AH T200 TG Black',
+        PcpriceBf: 3 + '.' + 690 + '.' + 990,
+        Pcprice: 3 + '.' + 490 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gearvn-case-thermaltake-ah-t200-tg-black-1_4d9c0937d86b425695f8ce4fccf3d3ea_large.png',
+        PcsalesProduct: '-5%',
+    },
+    {
+
+        PclaptopName: 'Case Antec Striker Mini Watercool ITX',
+        PcpriceBf: 6 + '.' + 490 + '.' + 990,
+        Pcprice: 5 + '.' + 990 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/gallery-striker-01_8c5250f0973245e4a9e5557df6e0dadd_large.jpg',
+        PcsalesProduct: '-9%',
+    },
+    {
+
+        PclaptopName: 'Case Lian Li PC - O11 Dynamic Mini White',
+        PcpriceBf: 4 + '.' + 590 + '.' + 990,
+        Pcprice: 3 + '.' + 890 + '.' + 990,
+        PcimageProduct: 'https://product.hstatic.net/1000026716/product/18_4816f485b3264b0c9b12970412e2f081_large.jpg',
+        PcsalesProduct: '-15%',
+    },
+
+]
+
+
+function showProductImageLaptopPc() {
+    var showProductImageLaptopPc = document.getElementById('loadPcVPN')
+    showProductImageLaptopPc.innerHTML = ''
+    for (var i = 0; i < arrayImageProductLaptopPc.length; i++) {
+        PclaptopNameProduct = arrayImageProductLaptopPc[i].PclaptopName
+        PcpriceBflaptoppriceBfBefore = arrayImageProductLaptopPc[i].PcpriceBf
+        PcpricepriceProductAfter = arrayImageProductLaptopPc[i].Pcprice
+        PcimageProductProductShow = arrayImageProductLaptopPc[i].PcimageProduct
+        PcsalesProductShow = arrayImageProductLaptopPc[i].PcsalesProduct
+        showProductImageLaptopPc.innerHTML += `
+            <div class="product__detals-hot">
+            <img class="product__detals-img" src="${PcimageProductProductShow}" alt="">
+            <div class="product__title">
+                <h1>${PclaptopNameProduct}</h1>
+                <h2>${PcpriceBflaptoppriceBfBefore}</h2>
+                <h3>${PcpricepriceProductAfter}</h3>
+                <div class="product__image-hot">
+                    <img src="https://theme.hstatic.net/1000026716/1000440777/14/icon-saleoff.png" alt="">
+                    <h5>${PcsalesProductShow}</h5>
+                </div>
+            </div>
+
+        </div>
+    `
+    }
+}
+
+showProductImageLaptopPc()
+
